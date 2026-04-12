@@ -3,9 +3,9 @@ import type { Response } from "express"
 
 export const generateJWTToken = (userId: string, res: Response) => {
     const token = jwt.sign({ userId }, process.env.JWT_SECRET as string, {
-        // expiresIn: '7d',
+        expiresIn: '7d',
         // expiresIn: '1m',
-        expiresIn: '1h',
+        // expiresIn: '1h',
     })
 
 
