@@ -27,6 +27,9 @@ const CustomerProfile = () => {
   const [showSingleEmiDelete, setShowSingleEmiDelete] = useState<boolean>(false)
 
   const fetchCustomer = async () => {
+
+    console.log("Id is : ",id)
+
     try {
       setLoading(true)
 
