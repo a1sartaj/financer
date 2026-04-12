@@ -1,5 +1,87 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
+/* 
+========================================
+ FINANCE APP THEME (LIGHT MODE)
+========================================
+Purpose:
+- Blue → trust / primary action
+- Green → money / success
+- Neutral → readability & clean UI
+*/
+
+@theme {
+    /*  Primary Colors (Main actions like buttons, highlights) */
+    --color-primary: #2563eb;
+    /* strong blue (buttons, links) */
+    --color-primary-light: #3b82f6;
+    /* hover / active state */
+
+    /*  Secondary Colors (Success, EMI paid, positive states) */
+    --color-secondary: #10b981;
+    /* green (success, paid EMI) */
+
+    /*  Background System */
+    --color-background: #f9fafb;
+    /* app background */
+    --color-hard-background: #f3f4f6;
+    /* Hard gray color */
+    --color-card: #ffffff;
+    /* cards, modals */
+
+    /*  Text Colors */
+    --color-text-primary: #111827;
+    /* main text (high contrast) */
+    --color-text-red: #ff0000;
+    /* Red text color */
+    --color-text-secondary: #6b7280;
+    /* muted text (labels, hints) */
+
+    /*  Borders & Dividers */
+    --color-border: #e5e7eb;
+    /* subtle borders */
+
+    /*  Optional States */
+    --color-danger: #ef4444;
+    /* errors, delete */
+    --color-warning: #f59e0b;
+    /* warnings */
+}
+
+.active {
+    color: var(--color-primary)
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Add this in your styles.css */
 @layer components {
     .scrollbar-custom::-webkit-scrollbar {
@@ -21,6 +103,3 @@
         background: #555;
     }
 }
-
-
-

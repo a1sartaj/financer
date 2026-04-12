@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom';
-import { AdminContext } from '../Context/AdminContext';
+import { AdminContext } from '../context/AdminContext';
 
 const AdminLoginPage = () => {
     axios.defaults.withCredentials = true;

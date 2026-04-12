@@ -22,11 +22,7 @@ export const AppContextProvider = (props) => {
             const { data } = await axios.get(backendUrl + '/customer/get-all-customer');
             if (data.success) {
 
-                const sortedCustomer = data.allCustomers;
-
-                sortedCustomer.sort((a, b) => a.name.localeCompare(b.name))
-
-                setAllCustomers(sortedCustomer)
+                setAllCustomers(data.customers)
             } else {
                 if (data.message === 'Not Authorized. Login Again') {
                     toast.error(data.message)
@@ -46,7 +42,7 @@ export const AppContextProvider = (props) => {
         try {
             const { data } = await axios.get(backendUrl + `/customer/get-single-customer/${id}`)
             if (data.success) {
-                setSingleCustomer(data.singleCustomer)
+                setSingleCustomer(data.customer)
             } else {
                 if (data.message === 'Not Authorized. Login Again') {
                     toast.error(data.message)
@@ -96,7 +92,7 @@ export const AppContextProvider = (props) => {
         //     setAllCustomers(filteredCustomers);
         // }
 
-        
+
 
         if (searchBar === "") {
             getAllCustomer();
