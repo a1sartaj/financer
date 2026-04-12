@@ -7,14 +7,12 @@ export const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
-    console.log("AuthProvider run")
-
+    
     const [user, setUser] = useState<User | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
 
 
     const fetchUser = async () => {
-        console.log("Fetch User called")
         try {
             setLoading(true)
             const response = await axiosInstance.get('/financer/get-me')

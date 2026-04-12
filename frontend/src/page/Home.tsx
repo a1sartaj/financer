@@ -50,7 +50,7 @@ const Home = () => {
                         {customers.map((customer: Customer, index) => (
 
                             <tr key={index} className='border-t text-lg text-text-primary border-border' >
-                                <td className="p-2 hover:text-primary hover:translate-x-1 transition-all duration-300 ease-in"> <Link onClick={() => console.log("Clicked ID:", customer._id)} to={`/customer/${customer._id}`} >{customer.name}</Link> </td>
+                                <td className="p-2 hover:text-primary hover:translate-x-1 transition-all duration-300 ease-in"> <Link to={`/customer/${customer._id}`} >{customer.name}</Link> </td>
                                 <td className=" p-2">{formatDate(customer.openDate)}</td>
                                 <td className=" p-2">{formatDate(customer.closeDate)}</td>
                                 <td className={`p-2 font-medium ${customer && customer?.pendingBalance < 0 ? 'text-text-red' : 'text-secondary'}`}>₹{customer.pendingBalance}</td>

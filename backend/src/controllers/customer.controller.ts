@@ -9,8 +9,6 @@ export const getAllCustomers = async (req: Request, res: Response) => {
 
         const customers = await customerModal.find({ financerId: userId, isDefaulter: false, deletedAt: null }).sort({ name: 1 })
 
-        // console.log("Customer is ")
-
         if (customers.length === 0) {
             return res.status(404).json({ success: false, message: 'Customer not found' })
         }
@@ -84,13 +82,8 @@ export const addNewCustomer = async (req: Request, res: Response) => {
 
 export const getSingleCustomers = async (req: Request, res: Response) => {
     const { id } = req.params;
-
-    console.log("Id is :", id)
-
     try {
         const customer = await customerModal.findById(id);
-
-        console.log("Customer is : ", customer)
 
         if (!customer) {
             return res.status(404).json({ success: false, message: 'Customer not found' })

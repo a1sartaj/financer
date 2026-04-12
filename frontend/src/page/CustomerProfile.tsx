@@ -28,8 +28,6 @@ const CustomerProfile = () => {
 
   const fetchCustomer = async () => {
 
-    console.log("Id is : ",id)
-
     try {
       setLoading(true)
 
@@ -211,7 +209,7 @@ const CustomerProfile = () => {
 
           <tbody  >
             {
-              customer?.loanRepayment.map((emi, index) => (
+              customer?.loanRepayment.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((emi, index) => (
                 <tr key={index} className='border-t text-base text-text-primary border-border' >
                   <td className="p-2 hover:text-primary hover:translate-x-1 transition-all duration-300 ease-in"> {index + 1} </td>
                   <td className=" p-2">{formatDate(emi.date)}</td>

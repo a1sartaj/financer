@@ -48,7 +48,7 @@ const Navbar = () => {
 
             {/* Full Right Side  */}
             <div className="flex items-center gap-2" >
-                {/* Right Search Bar */}
+                {/* Right Search Bar
                 {
                     location.pathname === '/' && <div className="flex items-center">
                         <input
@@ -57,7 +57,7 @@ const Navbar = () => {
                             className="w-40 md:w-64 px-2 py-1 rounded-lg border border-border bg-background text-base text-text-primary placeholder:text-text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
-                }
+                } */}
 
                 {/* Dropw Down */}
                 <DropDownMenu />
