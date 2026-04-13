@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Customer } from "../types/types";
 import axiosInstance from "../api/axiosInstance";
 import { formatDate } from "../utils/formateDate";
@@ -104,10 +104,10 @@ const CustomerEmiEntry = () => {
                         {customers.map((customer: Customer, index) => (
 
                             <tr key={index} className='border-t text-text-primary border-border' >
-                                <td className="p-2 hover:text-primary"> {index + 1} </td>
-                                <td className="p-2 hover:text-primary"> {customer.name} </td>
-                                <td className="p-2 hover:text-primary"> {customer.EMIAmount} </td>
-                                <td className="p-2 hover:text-primary n">
+                                <td className="p-2 "> {index + 1} </td>
+                                <td className="p-2 "> {customer.name} </td>
+                                <td className="p-2 "> {customer.EMIAmount} </td>
+                                <td className="p-2">
 
                                     <input
                                         type="number"
@@ -119,8 +119,6 @@ const CustomerEmiEntry = () => {
                                         value={emiInput[customer._id] ?? ''}
                                         min={0}
                                     />
-
-                                    {/* patani 0 kyu add nahi ho raha hai use fix karna hai complete code daal kar dekhna hai*/}
 
                                 </td>
                                 <td className=" p-2">{formatDate(customer.openDate)}</td>

@@ -32,7 +32,7 @@ const Home = () => {
     if (loading) return <Spinner />
 
     return (
-        <div className='w-full max-w-6xl mx-auto' >
+        <div className='w-full max-w-6xl mx-auto mb-4' >
             <h1 className='text-primary text-2xl md:text-3xl font-semibold' >Customer List</h1>
 
             {/* It show on Desktop mode */}
@@ -40,6 +40,7 @@ const Home = () => {
                 <table className='w-full text-base text-text-secondary text-left'>
                     <thead>
                         <tr className='bg-hard-background'>
+                            <th className='  p-2'>No</th>
                             <th className='  p-2'>Name</th>
                             <th className=' p-2'>Open Date</th>
                             <th className=' p-2'>Close Date</th>
@@ -50,6 +51,7 @@ const Home = () => {
                         {customers.map((customer: Customer, index) => (
 
                             <tr key={index} className='border-t text-lg text-text-primary border-border' >
+                                <td className=" p-2">{index + 1}</td>
                                 <td className="p-2 hover:text-primary hover:translate-x-1 transition-all duration-300 ease-in"> <Link to={`/customer/${customer._id}`} >{customer.name}</Link> </td>
                                 <td className=" p-2">{formatDate(customer.openDate)}</td>
                                 <td className=" p-2">{formatDate(customer.closeDate)}</td>

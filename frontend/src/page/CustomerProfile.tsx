@@ -50,8 +50,6 @@ const CustomerProfile = () => {
 
   if (loading) return <Spinner />
 
-  // Customer profile me update button ko banana hai ek update par click karne se ek window popup hoga aur usme new details add karne hogi jisse wah update ho jayega
-
   if (!customer) {
     return (
       <div className="flex flex-col items-center justify-center w-full h-[80vh] text-center">
@@ -211,7 +209,7 @@ const CustomerProfile = () => {
             {
               customer?.loanRepayment.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((emi, index) => (
                 <tr key={index} className='border-t text-base text-text-primary border-border' >
-                  <td className="p-2 hover:text-primary hover:translate-x-1 transition-all duration-300 ease-in"> {index + 1} </td>
+                  <td className="p-2"> {customer.loanRepayment.length - index} </td>
                   <td className=" p-2">{formatDate(emi.date)}</td>
                   <td className=" p-2"> {emi.emiReceived} </td>
                   <td className="flex  items-center gap-2 p-2 text-white">
